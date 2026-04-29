@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "VoiceNav+ (Client Test)",
+  "version": "0.2",
+  "description": "Voice-driven browser extension for testing speech recognition, tab management, and AI-assisted browsing.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://www.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/contentScript.js"]
+    }
+  ]
+}
